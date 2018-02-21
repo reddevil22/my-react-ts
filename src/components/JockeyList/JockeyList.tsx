@@ -41,12 +41,12 @@ export class JockeyList extends React.Component<JockeyProps, JockeyListState> {
         // console.log(this.state.horses);
         return (
             <div>
-                {this.state.arrayJockey.map((person, i) => {
+                {this.state.arrayJockey.map((person: PersonInterface, i: number) => {
                     return (
                         <Jockey
                             key={i}
                             avatar_url={person.avatar_url}
-                            login={person.name}
+                            login={person.login}
                         />
                     );
                 })}
