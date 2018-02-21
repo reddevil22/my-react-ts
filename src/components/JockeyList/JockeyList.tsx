@@ -1,13 +1,29 @@
 import * as React from 'react';
 import Jockey from '../Jockey/Jockey';
-import RaceTrack from '../RaceTrack/RaceTrack';
+// import RaceTrack from '../RaceTrack/RaceTrack';
 import JockeyProps from '../../interfaces';
-import JockeyListState from '../../interfaces';
+import PersonInterface from '../../interfaces';
+
 
 const data = require('json-loader!../../team.json');
 
+interface JockeyListState {
+    arrayJockey: Array<object>;
+}
+
 const random = () => {
     return Math.floor(Math.random() * data.length);
+};
+
+const randomArr = () => {
+    let people = [
+        data[random()],
+        data[random()],
+        data[random()],
+        data[random()]
+    ];
+
+    return people;
 };
 
 export class JockeyList extends React.Component<JockeyProps, JockeyListState> {
@@ -15,30 +31,22 @@ export class JockeyList extends React.Component<JockeyProps, JockeyListState> {
         super(props);
 
         this.state = {
-            horses: JockeyListState;
+            arrayJockey: randomArr().map((person: PersonInterface, i: number) => (
+                {name: person.login, avatar_url: person.avatar_url}
+            ))
         };
-    }
-
-    componentWillMount() {
-        let people = [
-            data[random()],
-            data[random()],
-            data[random()],
-            data[random()]
-        ];
-        this.setState({ horses: people });
     }
 
     render() {
         // console.log(this.state.horses);
         return (
             <div>
-                {this.state.horses.map((person, i) => {
+                {this.state.arrayJockey.map((person, i) => {
                     return (
                         <Jockey
                             key={i}
                             avatar_url={person.avatar_url}
-                            login={person.login}
+                            login={person.name}
                         />
                     );
                 })}

@@ -5,10 +5,6 @@ export default interface JockeyProps {
     login: string;
 }
 
-export default interface JockeyListState {
-    state: Jockey[];
-}
-
 export interface PersonInterface {
     login: string;
     id: string;
