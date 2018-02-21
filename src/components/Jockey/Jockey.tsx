@@ -1,11 +1,7 @@
+import JockeyProps from '../../interfaces';
 import * as  React from 'react';
 
-interface Props {
-    avatar_url: string;
-    login: string;
-}
-
-export class Jockey extends React.Component<Props, {}> {
+export default class Jockey extends React.Component<JockeyProps, {}> {
     render() {
         return(
             <div>
