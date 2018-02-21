@@ -4,7 +4,6 @@ import Jockey from '../Jockey/Jockey';
 import JockeyProps from '../../interfaces';
 import PersonInterface from '../../interfaces';
 
-
 const data = require('json-loader!../../team.json');
 
 interface JockeyListState {
@@ -50,7 +49,7 @@ export class JockeyList extends React.Component<JockeyProps, JockeyListState> {
                         />
                     );
                 })}
-                <RaceTrack />
+                {/* <RaceTrack /> */}
             </div>
         );
     }

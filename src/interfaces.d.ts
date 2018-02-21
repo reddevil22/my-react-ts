@@ -1,5 +1,3 @@
-import { Jockey } from "./components/Jockey/Jockey";
-
 export default interface JockeyProps {
     avatar_url: string;
     login: string;
