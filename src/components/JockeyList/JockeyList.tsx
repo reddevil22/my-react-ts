@@ -25,13 +25,13 @@ const randomArr = () => {
     return people;
 };
 
-export class JockeyList extends React.Component<JockeyProps, JockeyListState> {
-    constructor(props: JockeyProps) {
+export class JockeyList extends React.Component<React.Props<{}>, JockeyListState> {
+    constructor(props: React.Props<{}>) {
         super(props);
 
         this.state = {
             arrayJockey: randomArr().map((person: PersonInterface, i: number) => (
-                {name: person.login, avatar_url: person.avatar_url}
+                {avatar_url: person.avatar_url, login: person.login}
             ))
         };
     }
