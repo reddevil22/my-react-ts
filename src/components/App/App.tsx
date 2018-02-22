@@ -1,10 +1,36 @@
 import * as React from 'react';
 import './App.css';
 import { JockeyList } from '../JockeyList/JockeyList';
+import { Progress, Button } from 'antd';
+const ButtonGroup = Button.Group;
 
-export class App extends React.Component<React.Props<{}>, {}> {
+interface State {
+    percent: number;
+}
+
+export class App extends React.Component<React.Props<{}>, State> {
     constructor(props: React.Props<{}>) {
         super(props);
+
+        this.state = {
+            percent: 0
+        };
+    }
+
+    increase = () => {
+        let percent = this.state.percent + 10;
+        if (percent > 100) {
+            percent = 100;
+        }
+        this.setState({ percent });
+    }
+
+    decline = () => {
+        let percent = this.state.percent - 10;
+        if (percent < 0) {
+            percent = 0;
+        }
+        this.setState({ percent });
     }
     /* render() {
         return (
@@ -34,7 +60,11 @@ export class App extends React.Component<React.Props<{}>, {}> {
         return (
             <div className="App">
                 <header className="App-header">
-                    <img src={require('../../images/logo.svg')} className="App-logo" alt="logo" />
+                    <img
+                        src={require('../../images/logo.svg')}
+                        className="App-logo"
+                        alt="logo"
+                    />
                     <h1 className="App-title">Welcome to React</h1>
                     <h2 className="App-sub-title">Kurtosys Grads</h2>
                 </header>
@@ -47,13 +77,19 @@ export class App extends React.Component<React.Props<{}>, {}> {
 
                     <div id="track">
                         <h2>Race Track</h2>
-                        <button>Start Race</button>
-                        <button type="reset">Reset Race</button>
-                        <div id="grass">
+                        <ButtonGroup>
+                            <Button onClick={this.increase} type="primary">Start Race</Button>
+                            <Button onClick={this.decline} type="danger">Reset Race</Button>
+                        </ButtonGroup>
+                        {/* <div id="grass">
                             <div id="line-1" />
                             <div id="line-2" />
                             <div id="line-3" />
-                        </div>
+                        </div> */}
+                        <Progress percent={this.state.percent} showInfo={false} />
+                        <Progress percent={this.state.percent} showInfo={false} />
+                        <Progress percent={this.state.percent} showInfo={false} />
+                        <Progress percent={this.state.percent} showInfo={false} />
                     </div>
 
                     <div id="scoreboard">
