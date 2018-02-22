@@ -1,14 +1,9 @@
 import * as React from 'react';
 import './App.css';
 import { JockeyList } from '../JockeyList/JockeyList';
-import JockeyProps from '../../interfaces';
 
-interface State {
-    dummy?: string;
-}
-
-export class App extends React.Component<JockeyProps, {}> {
-    constructor(props: JockeyProps) {
+export class App extends React.Component<React.Props<{}>, {}> {
+    constructor(props: React.Props<{}>) {
         super(props);
     }
     /* render() {

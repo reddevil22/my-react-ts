@@ -1,38 +1,107 @@
-h1, h2 {
-  margin: 5px;
+h1,
+h2 {
+    margin: 5px;
 }
 
 .App {
-  text-align: center;
+    text-align: center;
+}
+
+#horses {
+    border: black;
+    border-style: dotted;
+    border-width: 3px;
+    padding-top: 10px;
+    width: 300px;
+    height: 500px;
+    margin: 20px;
+}
+
+#track {
+    height: 300px;
+    width: 800px;
+    border: black;
+    border-style: dotted;
+    border-width: 3px;
+    left: 530px;
+    top: 200px;
+    position: fixed;
+    margin: 20px;
+}
+
+#grass {
+    background-color: green;
+    height: 220px;
+    width: 780px;
+    margin: 10px;
+}
+
+#line-1 {
+    height: 2px;
+    background: white;
+    position: relative;
+    top: 40px;
+}
+
+#line-2 {
+    height: 2px;
+    background: white;
+    position: relative;
+    top: 100px;
+}
+
+#line-3 {
+    height: 2px;
+    background: white;
+    position: relative;
+    top: 160px;
+}
+
+#scoreboard {
+    border: black;
+    border-style: dotted;
+    height: 200px;
+    width: 600px;
+    left: 650px;
+    bottom: 60px;
+    position: fixed;
+}
+
+#cards {
+    padding-top: 10px;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
 }
 
 .App-header {
-  background-color: #014373;
-  height: 160px;
-  padding: 20px;
-  color: white;
+    background-color: #014373;
+    height: 160px;
+    padding: 20px;
+    color: white;
 }
 
 .App-title {
-  margin-top: 10px;
-  font-size: 1.5em;
+    margin-top: 10px;
+    font-size: 1.5em;
 }
 
 .App-sub-title {
-  font-size: 1.2em;
-  font-weight: lighter;
+    font-size: 1.2em;
+    font-weight: lighter;
 }
 
 .App-intro {
-  font-size: large;
+    font-size: large;
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
